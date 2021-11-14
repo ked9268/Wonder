@@ -1,0 +1,14 @@
+
+public class ccrud {
+
+	public static void main(String[] args) {
+	
+		
+		for(int i=0;i<2;i++){
+			System.out.print("|");	
+		}
+		for(int j=0 ;j< 32;j++){
+			System.out.print(".");
+		}
+	}
+}

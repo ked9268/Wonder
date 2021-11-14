@@ -1,0 +1,65 @@
+
+public class ccrud {
+
+	public static void main(String[] args) {
+		int s = 500;
+		int s1 = 2000;
+		int s2 = 2500;
+		int s3 = 2800;
+		int silence = 100;
+		
+		double C4	= 261.63;
+		double D4	= 293.66; 	
+		double Eb4  = 311.13;
+		double E4	= 329.63; 	
+		double F4	= 349.23; 	
+		double G4	= 392.00; 	
+		double A4	= 440.00; 	
+		double B4	= 493.88; 
+		double C5	= 523.25; 	
+		double D5	= 587.33; 
+		double Eb5      = 622.25;
+		double E5 = E4*2;
+		double F5 = F4*2;
+		double G5 = G4*2;
+		double A5 = A4*2;
+		double B5 = B4*2;
+		double C6 = C5*2;
+		double D6 = D5*2;
+		double E6 = E5*2 ;
+		double Eb6 = Eb5*2; 
+		double F6 = F5*2;
+		double G6 = G5*2;
+		double A6 = A5*2;
+		double B6 = B5*2;
+		double C7	= 2093.00; 
+		double silense = 0;
+		double [][] notes = { 
+			     {C4,s1}, {G4,s1},{C5,s1},
+			     {E5,s},{Eb5,s3},
+			     {C4,s},{G4,s1},{C5,s1},
+			     {Eb5,s},{E5,s3},
+			     {A5,s},{B5,s},{C6,s1},
+			     {A5,s},{B5,s},{C6,s1},
+			     {D6,s2},
+			     {E6,s},{F6,s},{G6,s1},
+			     {E6,s},{F6,s},{G6,s1},
+			     {A6,s1},{B6,s1},{C7,s3}
+			    };
+			    
+
+		for(int i=0;i < notes.length;i++){
+			if( i == 4| i == 10){
+				System.out.println(notes[i][1]);// noteLength
+				System.out.println(notes[i][0]); //frequency
+				System.out.println(s); 
+			}
+			else{
+			System.out.println(notes[i][1]); // noteLEngth
+			System.out.println(notes[i][0]); //frequency
+			System.out.println(silence);
+			}
+	   }
+	}
+
+}

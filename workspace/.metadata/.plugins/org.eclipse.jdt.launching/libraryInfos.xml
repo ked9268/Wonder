@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre" version="1.8.0_261">
+        <bootpath>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\resources.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\rt.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\sunrsasign.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\jsse.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\jce.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\charsets.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\jfr.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/Users/wiz/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_17.0.0.v20211012-1059/jre" version="17"/>
+    <libraryInfo home="C:\Program Files\Java\jre1.8.0_144" version="1.8.0_144">
+        <bootpath>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\resources.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\rt.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\sunrsasign.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\jsse.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\jce.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\charsets.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\jfr.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Program Files\Java\jre1.8.0_144\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/Users/wiz/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_17.0.0.v20211012-1059" version="17"/>
+    <libraryInfo home="C:\Program Files\Java\jre1.8.0_271" version="1.8.0_271">
+        <bootpath>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\resources.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\rt.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\sunrsasign.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\jsse.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\jce.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\charsets.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\jfr.jar"/>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Program Files\Java\jre1.8.0_271\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse" version="1.8.0_261">
+        <bootpath>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\resources.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\rt.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\sunrsasign.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\jsse.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\jce.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\charsets.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\jfr.jar"/>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Users\ked\Downloads\eclipse-java-luna-SR2-win32-x86_64\eclipse\jre\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+</libraryInfos>

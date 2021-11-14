@@ -1,0 +1,67 @@
+package educat;
+
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Home extends JFrame  {
+	
+	String text = null;
+	JLabel just;
+	static JPanel pane;
+	Boolean origin = true;
+	public Home () {
+		HandlerClass russ = new HandlerClass();
+		ImageIcon icon = new ImageIcon("src/rocket.jpg");
+		ImageIcon bg = new ImageIcon("src/NightSky.jpg");
+	    JLabel image = new JLabel(icon);
+	    JLabel bg_ = new JLabel(bg);
+	    pane = new JPanel();
+	    pane.add(image);
+		pane.add(bg_);
+		pane.addMouseMotionListener(russ);
+		JFrame frame = new JFrame();
+		frame.setSize(300,300);
+		frame.add(pane);
+		frame.setVisible(true);
+		
+	    while(true){
+	   image.setBounds(HandlerClass.x,HandlerClass.y,150,150);
+	    }
+	}
+	
+	//MouseEvents.
+	public static class HandlerClass implements MouseMotionListener {
+
+		public static int x;
+		public static int y = 20;
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			
+			pane.setBackground(Color.ORANGE);
+			x = e.getX();
+			y = e.getY();
+			System.out.println(x+":"+y);
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			//pane.setBackground(Color.BLUE);
+			
+		}	
+	}
+	public static void main(String[] args){
+		new Home();
+		
+	}
+}  
+
+

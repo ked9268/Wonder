@@ -1,0 +1,19 @@
+package educat;
+
+import javafx.stage.Stage;
+import javafx.application.Application;
+public class Home extends Application {
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+	primaryStage.setTitle("Educational Game for Kids");
+	System.out.println(primaryStage.isFullScreen());
+	primaryStage.show();
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch(args);
+		
+	}
+
+}

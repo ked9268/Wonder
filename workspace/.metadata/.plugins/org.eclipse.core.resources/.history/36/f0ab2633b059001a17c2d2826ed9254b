@@ -1,0 +1,40 @@
+package educat;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class Leaderboard {
+	
+	public void createContainer(){
+		String [] column_names = {"Name", "Score","Date taken"};
+		String [][] data ={
+				{"Test data "," End of Row",null},
+				{"Second Row","End of Row",null},
+				{"Third Row "," End of Row",null},
+				{"Fourth Row","End of Row",null},
+				{"Fifth data "," End of Row",null},
+				{"Sixth Row","End of Row",null},
+				{"Seventh data "," End of Row",null},
+				{"8th Row","End of Row","8th Row"},
+				{"Test data "," End of Row",null},
+				{"Second Row","End of Row",null},
+				{"Test data "," End of Row",null},
+				{"Second Row","End of Row",null},
+				
+		};
+		JTable table = new JTable(data,column_names);
+		JScrollPane sp = new JScrollPane(table);
+		table.setRowHeight(70);
+		table.setBounds(30, 40, 200, 300);
+	}
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		JScrollPane pane = new JScrollPane();
+		frame.add(pane);
+        frame.setVisible(true);
+        frame.setSize(300,300);
+	}
+
+}

@@ -1,0 +1,23 @@
+package test;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+
+import controller.events;
+import controller.string_to_key_press;
+public class check_methods {
+	public static Runtime run = Runtime.getRuntime();
+	public static void main(String[] args) throws AWTException, InterruptedException, IOException{
+		//run.exec("cmd.exe /c start");
+		Robot rb = new Robot();
+		Thread.sleep(200);
+		new string_to_key_press("shutdown ");
+		Thread.sleep(200);
+		rb.keyPress(KeyEvent.VK_SLASH);
+		rb.keyRelease(KeyEvent.VK_SLASH);
+		Thread.sleep(200);
+		new string_to_key_press("s");
+		events.enter(1);
+	}
+}

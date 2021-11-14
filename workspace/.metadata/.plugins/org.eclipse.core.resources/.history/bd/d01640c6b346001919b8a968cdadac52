@@ -1,0 +1,6 @@
+
+public class GameState implements Runnable  {
+	private static int MINVAL = 1; 
+
+	public void run(){}
+}

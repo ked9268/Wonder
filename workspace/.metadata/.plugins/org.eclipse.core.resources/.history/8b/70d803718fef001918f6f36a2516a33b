@@ -1,0 +1,16 @@
+package educat;
+
+import javafx.stage.Stage;
+import javafx.application.Application;
+public class Home extends Application {
+	public void start(Stage primaryStage) throws Exception {
+		primaryStage.setFullScreen(false);
+	primaryStage.show();
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch(args);
+		
+	}
+
+}

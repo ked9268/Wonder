@@ -1,0 +1,1 @@
+Methods to exploit Youtube trials for subscribers will reside here.

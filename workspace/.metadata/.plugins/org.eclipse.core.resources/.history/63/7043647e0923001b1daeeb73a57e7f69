@@ -1,0 +1,30 @@
+package view;
+
+import java.awt.AWTException;
+import java.awt.Desktop;
+import java.awt.Robot;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class browse_internet {
+	String [] websites  = {"facebook.com","reddit.com","youtube.com","Wikipedia.com",
+			"twitter.com","instagram.com","google.com"};
+	
+	public browse_internet(){
+		//Class constructor!
+	}
+	public static void openFacebook() throws URISyntaxException, IOException{
+		URI facebook = new URI("https://www.facebook.com/");
+		Desktop desktop = Desktop.getDesktop();
+		desktop.browse(facebook);
+	}
+	public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException, AWTException {
+		
+		openFacebook();
+		Thread.sleep(5000);
+		Robot c = new Robot();
+		c.mouseMove(500,500);
+	}
+
+}

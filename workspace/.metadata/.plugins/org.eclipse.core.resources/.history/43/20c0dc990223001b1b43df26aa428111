@@ -1,0 +1,35 @@
+package microsoft;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.io.IOException;
+
+import model.Word;
+import view.events;
+public class chrome_exploit {
+	int counter = 0;
+	static Robot rb;
+	static Word word;
+	public chrome_exploit() throws IOException, AWTException, InterruptedException{
+		word = new Word();
+		while(counter < 31){
+			events.open_chrome();
+			Thread.sleep(500);		
+			events.click();
+			Thread.sleep(500);
+			events.fullScreen();
+			Thread.sleep(500);
+			events.moveToSearch();
+			Thread.sleep(500);
+			input.search();
+			counter = counter+1;
+		}
+		events.extendScreen();
+		events.sleep(5000);
+		events.close_browser();
+	}
+	public static void main(String[] args) throws AWTException, IOException, InterruptedException {
+		new chrome_exploit();
+	}
+
+}

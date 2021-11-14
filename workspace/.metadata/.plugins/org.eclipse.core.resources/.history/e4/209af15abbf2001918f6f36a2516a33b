@@ -1,0 +1,37 @@
+package educat;
+
+import javafx.scene.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+
+import java.awt.geom.RoundRectangle2D.Double;
+
+import javafx.stage.*;
+import javafx.application.Application;
+public class Home extends Application {
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		//Title of stage in minimize mode.
+	primaryStage.setTitle("Educational Game for Kids");
+	Circle circle = new Circle(20.0, Color.AQUA);
+	Rectangle loading_bar = new Rectangle(300.0,20.0);
+	BorderPane pane = new BorderPane(circle,loading_bar,null,null,null);
+	Scene scene = new Scene(pane);
+	primaryStage.setHeight(300.0);
+	primaryStage.setWidth(300.0);
+	primaryStage.setScene(scene);
+	//Full Screen toggle.
+	//primaryStage.setFullScreen(true);
+	//
+	primaryStage.show();
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch(args);
+		
+	}
+
+}

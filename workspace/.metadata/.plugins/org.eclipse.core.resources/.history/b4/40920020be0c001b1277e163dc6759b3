@@ -1,0 +1,58 @@
+package model;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.io.IOException;
+import java.util.Arrays;
+
+import view.events;
+import automation.string_to_key_press;
+
+public class Word {
+	/**
+	 * Hopefully will result in a program that will be able to pose questions. with the use of
+	 * informatives and words from the dictionary as well as adverbs, nouns, adjectives required to 
+	 * produce a feasible question. 
+	 * 
+	 */
+	static char [] alphabet = {'a','b','c','d','e','f','g','h','i','j','k'
+			,'l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	String [] informatives ={"Who","What","Where","Why", "When"};
+	String [] words = {};
+	String [] nouns = {}; // Refers to a thing
+	String [] adjectives = {}; // An attribute of a noun
+	String [] verbs = {}; //An action word
+	String [] adverbs = {}; //Describes a verb.
+	String [] question = {"What is?","How do?", "When did?","How are?","When do"};
+	static StringBuffer word = new StringBuffer();
+	static StringBuffer key_strokes = new StringBuffer();
+	public static char getLetter(int c){
+		return alphabet[c];
+	}
+	public void setLetter(){
+		
+	}
+	public static StringBuffer createWord(int c){
+		if (c != 0){
+			try{
+				char d = getLetter((int)Math.round(Math.random()*alphabet.length));
+				key_strokes.append(Integer.toString( string_to_key_press.key_int(d) ));				
+				word.append(d);
+			}
+			catch(ArrayIndexOutOfBoundsException e){
+				c = c;
+				word.append(getLetter((int)Math.round(Math.random()*alphabet.length)));		
+			}
+			c = c-1;
+			createWord(c);
+		}
+		return word;
+	}
+		public Word(){
+			File file = new File("")
+			System.out.println("Pass the wordlist to the arraylist.");
+		}
+	public static void main(String[]args) throws AWTException,InterruptedException,IOException{
+		Word word = new Word();
+	}
+}

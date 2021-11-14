@@ -1,0 +1,28 @@
+package educat;
+
+import javafx.scene.*;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.*;
+import javafx.application.Application;
+public class Home extends Application {
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		//Title of stage in minimize mode.
+	primaryStage.setTitle("Educational Game for Kids");
+	
+	BorderPane pane = new BorderPane();
+	Scene scene = new Scene(pane);
+	primaryStage.setScene(scene);
+	//Full Screen toggle.
+	//primaryStage.setFullScreen(true);
+	//
+	primaryStage.show();
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch(args);
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package educat;
+
+import javax.swing.JFrame;
+
+public class Leaderboard {
+
+	public static void main(String[] args) {
+		String [] column_names = {"Name", "Score"};
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
+	}
+
+}

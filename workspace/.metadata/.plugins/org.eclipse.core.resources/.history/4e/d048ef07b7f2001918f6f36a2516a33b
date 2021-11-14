@@ -1,0 +1,29 @@
+package educat;
+
+import javafx.scene.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Circle;
+import javafx.stage.*;
+import javafx.application.Application;
+public class Home extends Application {
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		//Title of stage in minimize mode.
+	primaryStage.setTitle("Educational Game for Kids");
+	Circle circle = new Circle(2.0);
+	BorderPane pane = new BorderPane(circle);
+	Scene scene = new Scene(pane);
+	primaryStage.setScene(scene);
+	//Full Screen toggle.
+	//primaryStage.setFullScreen(true);
+	//
+	primaryStage.show();
+	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch(args);
+		
+	}
+
+}

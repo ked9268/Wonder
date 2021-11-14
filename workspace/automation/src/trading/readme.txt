@@ -1,0 +1,1 @@
+Holds the classes to perform automated tasks related to Trading such as scalping and returning the lists of high volatile sessions aswell as the events with the highest importance for the month. Methods such as identifying days where high swings may be generated and being able to automatically set trades will reside within these classes

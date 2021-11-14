@@ -1,0 +1,49 @@
+
+package co2001.lab1;
+import java.util.*;
+
+public class Vehicle {
+					static int NumberOfWheels = 0;
+					static String ColourofCar = "";
+					String Black,White,Red,Blue,Green;
+	public static int getWheels(){
+		return NumberOfWheels;
+	}
+	public static void setWheels(int Wheels){
+		NumberOfWheels = Wheels;
+		
+	}
+	public static void setColour(String colour){
+		ColourofCar = colour;
+	}
+	public  static String getColour(){
+		return ColourofCar;
+	}
+	public Vehicle(int Wheels,String colour){
+	Wheels = NumberOfWheels;
+	colour = ColourofCar;
+	}
+	public Vehicle(String colour){
+		colour = ColourofCar;
+	}
+	public Vehicle(){
+		NumberOfWheels = 4;
+		ColourofCar = Black;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Vehicle myVehicle = new Vehicle();
+		int f = scanner.nextInt();
+		myVehicle.setWheels(f);
+		myVehicle.getWheels();
+		System.out.println(getWheels());
+		
+		
+		
+        
+	}
+
+}

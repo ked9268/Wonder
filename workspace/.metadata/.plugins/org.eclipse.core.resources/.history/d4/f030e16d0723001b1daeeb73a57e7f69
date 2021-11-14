@@ -1,0 +1,12 @@
+package view;
+
+public class browse_internet {
+	String [] websites  = {"facebook.com","reddit.com","youtube.com","Wikipedia.com",
+			"twitter.com","instagram.com","google.com"};
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

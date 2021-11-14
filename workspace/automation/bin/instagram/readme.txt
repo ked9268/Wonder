@@ -1,0 +1,1 @@
+Events related to the execution of free trials on Instagram for likes and comments will mainly reside within these classes. 

@@ -1,0 +1,101 @@
+package educat;
+
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+//First Scene with button "Start Game" -> Calls second scene with button "Second Button".
+public class MainMenu{
+	JPanel jp;
+	static JFrame jf;
+	JButton button;
+	public void setPanel(JPanel jp){
+		jp.setBackground(Color.BLUE);
+		//button = new JButton("Start Game");
+		//JButton menu = new JButton("Menus");
+		//jp.add(button);
+		//jp.add(menu);
+		this.jp = jp;
+	}
+	public JPanel getPanel(){
+		return jp;
+	}
+	public JFrame getJFrame(){
+		return jf;
+	}
+	public void setJFrame(JFrame jf){
+		this.jf = jf;
+	}
+	public void createFrame(){ //Deprecated.
+		JFrame frame = new JFrame();
+		this.setJFrame(frame);
+	}
+	public void createPanel(){
+		JPanel panel = new JPanel();
+		this.setPanel(panel);
+	}
+	public String randomVar(){
+		Random random = new Random();
+		String c = Integer.toString(random.nextInt(100));
+		return c;
+	}
+	public void setAction(JButton jb){
+		action_listener action = new action_listener();
+		jb.addActionListener(action);
+	}
+	public JButton getJButton(){
+		return button;
+	}
+	public void setJButton(JButton jb){
+		this.button = jb;
+	}
+	public JButton addJButton(String c){
+		button = new JButton(c);
+		return button;
+	}
+	public void addEvent(JButton b){
+		action_buttons ab = new action_buttons();
+		b.setAction();
+	}
+	public class action_listener implements ActionListener{
+		//Click of 'Start Game' inside scene calls Home constructor.
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			Home c = new Home();
+			JFrame frame = getJFrame();
+			frame.remove(getPanel());
+			JPanel pane = c.getPanel();
+			pane.add(c.addJButton());
+			frame.add(c.addRocket());
+			frame.add(pane);
+			frame.setVisible(true);
+		}
+	}
+	public MainMenu(){
+		createPanel(); //create Scene Panel
+		JFrame frame = getJFrame();
+		setJFrame(frame);
+		JPanel panel = getPanel();
+		panel.add(addJButton("Start Game"));
+		panel.add(addJButton("Menu"));
+		panel.add(addJButton("Leaderboard"));
+	}
+	public static void main(String[] args){
+		JFrame frame = new JFrame();
+		MainMenu mm = new MainMenu();
+		mm.setJFrame(frame);
+		JPanel jp = mm.getPanel();
+		frame.setSize(300,300);
+		frame.setVisible(true);
+		frame.add(jp);
+		}
+}
+

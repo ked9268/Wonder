@@ -1,0 +1,15 @@
+package test;
+import java.awt.AWTException;
+import java.io.IOException;
+
+import controller.events;
+import controller.string_to_key_press;
+public class check_methods {
+	public static Runtime run = Runtime.getRuntime();
+	public static void main(String[] args) throws AWTException, InterruptedException, IOException{
+		//run.exec("cmd.exe /c start");
+		events.open_notepad();
+		Thread.sleep(200);
+		new string_to_key_press("\\");
+	}
+}

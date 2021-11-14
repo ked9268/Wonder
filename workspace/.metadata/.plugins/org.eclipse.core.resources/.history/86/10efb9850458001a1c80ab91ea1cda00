@@ -1,0 +1,93 @@
+package educat;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class testDraw extends JPanel {
+
+	public void paintComponent(Graphics g){
+			super.paintComponent(g);
+			this.setBackground(Color.BLUE);
+			g.setColor(Color.BLACK);
+			g.fillOval(HandlerClass.x,HandlerClass.y,100,50);
+		
+	}
+	public static class backdrop extends JPanel{
+		public void paintComponent(Graphics g){
+			super.paintComponent(g);
+			this.setBackground(Color.WHITE);
+			g.setColor(Color.BLACK);
+			g.fillOval(100, 150, 100, 50);
+		}
+	}
+	public static class HandlerClass implements MouseListener,MouseMotionListener {
+		public static int x,y;
+		public void mouseDragged(MouseEvent e) {	
+			x = e.getX();
+			y = e.getY();
+		}
+		@Override
+		public void mouseMoved(MouseEvent arg0) {
+					
+		}
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+					
+		}
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			
+		}
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			
+		}
+		@Override
+		public void mousePressed(MouseEvent arg0) {
+				
+		}
+		@Override
+		public void mouseReleased(MouseEvent arg0) {
+				
+		}
+	}
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		JPanel pane = new JPanel();
+		JPanel pane_for_drag_and_drop = new JPanel();
+		pane.setLayout(new GridLayout(1,2,15,5));
+		JButton button = new JButton("Stop start");
+		JButton while_loop = new JButton("While loop");
+		JButton for_loop = new JButton("For loop");
+		testDraw test = new testDraw();
+		HandlerClass russ = new HandlerClass();
+		//test.add(button);
+		pane_for_drag_and_drop.add(button);
+		pane_for_drag_and_drop.add(while_loop);
+		test.addMouseMotionListener(russ);
+		test.addMouseListener(russ);
+		pane.add(test);
+		pane.add(pane_for_drag_and_drop);
+		frame.add(pane);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(300,300);
+		frame.setVisible(true);
+			while(true){
+				test.repaint();
+				test.revalidate();
+			}
+		}
+	}

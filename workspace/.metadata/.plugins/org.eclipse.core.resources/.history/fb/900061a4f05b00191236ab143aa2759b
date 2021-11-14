@@ -1,0 +1,314 @@
+package cw4;
+
+/**
+ * Describe class (Step 6) Example3D here.
+ *
+ * Time-stamp: <2017-02-17 13:33:49 rlc3> edited by rlc 
+ *
+ */
+
+import java.awt.BorderLayout;
+import java.awt.GraphicsConfiguration;
+
+import com.sun.j3d.utils.applet.MainFrame;
+import com.sun.j3d.utils.universe.*;
+
+import javax.media.j3d.*;
+import javax.vecmath.*;
+
+import java.awt.*;
+
+import com.sun.j3d.utils.behaviors.mouse.*; 
+
+import javax.swing.JFrame;
+
+import com.sun.j3d.utils.geometry.ColorCube;
+import com.sun.j3d.utils.geometry.Box;
+import com.sun.j3d.utils.geometry.Sphere;
+
+public class step5 extends JFrame {
+    
+    public BranchGroup createSceneGraph() {
+
+	// creating the bounds of the universe
+	// see mouse behaviour below 
+	BoundingSphere bounds =
+	    new BoundingSphere(new Point3d(0.0,0.0,0.0), 1000.0);
+ 
+	// creating a branch group
+	BranchGroup objRoot = new BranchGroup();
+
+	// creating a transform group 
+	TransformGroup mainTG = new TransformGroup();		
+	mainTG.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
+	mainTG.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
+
+	// creating a rotation interpolator for a new cubeTG0
+	// and adding a RotationInterpolator
+	//TransformGroup cubeTG0 = new TransformGroup();
+	//cubeTG0.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
+        // Create a new behavior object (a RotationInterpolator) that will 
+        // rotate cube c (defined below) 
+        // LOOK UP Alpha in the API !!! 
+        // 1 means 1 complete rotation; -1 means repeat indefinitely 
+        // 18000 is the time (millisecs) for a complete rotation
+        Alpha rotationAlpha = new Alpha(1, 18000);
+	// ---- 
+        // LOOK UP RotationInterpolator in the API !!! 
+	// RotationInterpolator always rotates around the axis 
+	// specified by yAxis below. This is a transform. 
+	// If yAxis is the identity transform (matrix) then rotation
+	// occurs around the y axis. 
+        Transform3D yAxis = new Transform3D();
+       // RotationInterpolator rotator = new RotationInterpolator(rotationAlpha,
+       //  cubeTG0, yAxis, 0.0f, (float) Math.PI * (1.0f/4));
+       //  rotator.setSchedulingBounds(bounds);
+
+	// creating another transform group (cubeTG1, from t)
+        // first creating a transformation t 
+	Transform3D t = new Transform3D();
+        t.setScale(new Vector3d(3.0, 2.0 ,2.0));
+        t.setTranslation(new Vector3d(5.0, 6.0 ,-8));
+        // 
+	Transform3D helperT3D= new Transform3D();
+	helperT3D.rotZ(Math.PI);
+	t.mul(helperT3D);
+	helperT3D.rotX(Math.PI/2);
+	t.mul(helperT3D);
+        // so t is now rotX then rotZ then scale by 2 then translate -5 along z-axis 
+	TransformGroup cubeTG1 = new TransformGroup(t);
+
+	// creating an appearance (for a box)
+	
+	//Location of spheres.
+	Transform3D sphere3D = new Transform3D(); // The sun. Origin.
+	//sphere3D.setScale(new Vector3d(0.0,0.4,0.5));
+	sphere3D.setTranslation(new Vector3d(0, 0, 0));
+	
+	Transform3D sphere3D_2 = new Transform3D(); // Mercury.
+	sphere3D_2.setTranslation(new Vector3d(2, 0, 0));
+	
+	Transform3D sphere3D_3 = new Transform3D(); // Venus
+	sphere3D_3.setTranslation(new Vector3d(4, 0, 0));
+	
+	Transform3D sphere3D_4 = new Transform3D(); // Earth
+	sphere3D_4.setTranslation(new Vector3d(5,  0, 0));
+	
+	Transform3D sphere3D_5 = new Transform3D(); // Mars
+	sphere3D_5.setTranslation(new Vector3d(6, 0, 0));
+	
+	Transform3D sphere3D_6 = new Transform3D(); // Jupiter
+	sphere3D_6.setTranslation(new Vector3d(7, 0, 0));
+	
+	Transform3D sphere3D_7 = new Transform3D(); // Saturn
+	sphere3D_7.setTranslation(new Vector3d(8, 0, 0));
+	
+	Transform3D sphere3D_8 = new Transform3D(); // Uranus
+	sphere3D_8.setTranslation(new Vector3d(9, 0, 0));
+	
+	Transform3D sphere3D_9 = new Transform3D(); // Neptune
+	sphere3D_9.setTranslation(new Vector3d(10, 0, 0));
+	
+	
+	
+	//Apperance 
+	Appearance sunApp = new Appearance();
+	Appearance mercuryApp = new Appearance();
+	Appearance venusApp = new Appearance();
+	Appearance earthApp = new Appearance();
+	Appearance marsApp = new Appearance();
+	Appearance jupiterApp = new Appearance();
+	Appearance saturnApp= new Appearance();
+	Appearance neptuneApp = new Appearance();
+	Appearance uranusApp = new Appearance();
+	
+	// Material colours.
+	Material sunMA = new Material();
+	sunMA.setAmbientColor(new Color3f(1.0f,0.6f,0.0f)); // shines evenly accross universe no shadows.
+	sunMA.setDiffuseColor(new Color3f(1.0f,0.6f,0.0f)); // Color of object based on direction of light
+	sunMA.setSpecularColor(new Color3f(1.0f,0.6f,0.0f)); //Colour of light reflected.
+	
+	Material mercuryMA = new Material();
+	mercuryMA.setAmbientColor(new Color3f(0.82f,0.82f,0.82f)); // shines evenly accross universe no shadows.
+	mercuryMA.setDiffuseColor(new Color3f(0.82f,0.82f,0.82f)); // Color of object based on direction of light
+	mercuryMA.setSpecularColor(new Color3f(0.82f,0.82f,0.82f)); // color of light reflected.
+	
+	Material venusMA = new Material();
+	venusMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	venusMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	venusMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f)); //Colour of light reflected.
+	
+	Material earthMA = new Material();
+	earthMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	earthMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	earthMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f)); // color of light reflected.
+	
+	Material marsMA = new Material();
+	marsMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	marsMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	marsMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f)); // color of light reflected.
+	
+	Material jupiterMA = new Material();
+	jupiterMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	jupiterMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	jupiterMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f)); // color of light reflected.
+	
+	Material saturnMA = new Material();
+	saturnMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	saturnMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	saturnMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f)); //color of light reflected.
+	
+	Material uranusMA = new Material();
+	uranusMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	uranusMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	uranusMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f));
+	
+	Material neptuneMA = new Material();
+	neptuneMA.setAmbientColor(new Color3f(0.0f,0.0f,1.0f)); // shines evenly accross universe no shadows.
+	neptuneMA.setDiffuseColor(new Color3f(0.7f,0.7f,0.7f)); // Color of object based on direction of light
+	neptuneMA.setSpecularColor(new Color3f(0.7f,0.7f,0.7f)); // color of light reflected.
+	
+	
+	
+	
+	
+     
+
+	//Sphere shapes.
+	Sphere sphere = new Sphere(0.7f,sunApp); // The sun.
+	Sphere sphere2 = new Sphere(0.15f,mercuryApp); // Mercury
+	Sphere sphere3 = new Sphere(0.25f,venusApp); // Venus
+	Sphere sphere4 = new Sphere(0.4f,earthApp); // Earth
+	Sphere sphere5 = new Sphere(0.2f,marsApp); //Mars
+	Sphere sphere6 = new Sphere(0.5f,jupiterApp); //Jupiter
+	Sphere sphere7 = new Sphere(0.47f,saturnApp); //Saturn 
+	Sphere sphere8 = new Sphere(0.24f,uranusApp); //Uranus
+	Sphere sphere9 = new Sphere(0.21f,neptuneApp); // Neptune
+	
+	sunApp.setMaterial(sunMA);
+	mercuryApp.setMaterial(mercuryMA);
+	venusApp.setMaterial(venusMA);
+	earthApp.setMaterial(earthMA);
+	marsApp.setMaterial(marsMA);
+	jupiterApp.setMaterial(jupiterMA);
+	saturnApp.setMaterial(saturnMA);
+	uranusApp.setMaterial(uranusMA);
+	neptuneApp.setMaterial(neptuneMA);
+	
+	
+	TransformGroup spherePos = new TransformGroup(sphere3D);
+	TransformGroup spherePos_2 = new TransformGroup(sphere3D_2);
+	TransformGroup spherePos_3 = new TransformGroup(sphere3D_3);
+	TransformGroup spherePos_4 = new TransformGroup(sphere3D_4);
+	TransformGroup spherePos_5 = new TransformGroup(sphere3D_5);
+	TransformGroup spherePos_6 = new TransformGroup(sphere3D_6);
+	TransformGroup spherePos_7 = new TransformGroup(sphere3D_7);
+	TransformGroup spherePos_8 = new TransformGroup(sphere3D_8);
+	TransformGroup spherePos_9 = new TransformGroup(sphere3D_9);
+	spherePos.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
+	
+	Background background = new Background(new Color3f(0f,0f,0f));
+
+        // make edge relations between the scene graph nodes
+	// cube c is transformed by cubeTG2 then cubeTG1
+        // cube co and box b at the origin 
+	//sphereTG.addChild(spherePos);
+	spherePos.addChild(sphere);
+	spherePos_2.addChild(sphere2);
+	spherePos_3.addChild(sphere3);
+	spherePos_4.addChild(sphere4);
+	spherePos_5.addChild(sphere5);
+	spherePos_6.addChild(sphere6);
+	spherePos_7.addChild(sphere7);
+	spherePos_8.addChild(sphere8);
+	spherePos_9.addChild(sphere9);
+	
+	//sphereTG.addChild(sphere2);
+	background.setApplicationBounds(bounds); // bounds colour of background to the universe.
+	mainTG.addChild(background);
+	mainTG.addChild(spherePos);
+	mainTG.addChild(spherePos_2);
+	mainTG.addChild(spherePos_3);
+	mainTG.addChild(spherePos_4);
+	mainTG.addChild(spherePos_5);
+	mainTG.addChild(spherePos_6);
+	mainTG.addChild(spherePos_7);
+	mainTG.addChild(spherePos_8);
+	mainTG.addChild(spherePos_9);
+	objRoot.addChild(mainTG);
+	//mainTG.addChild(cubeTG1);
+	//cubeTG0.addChild(cubeTG1);
+        //cubeTG1.addChild(c);
+       // cubeTG0.addChild(rotator);
+	//mainTG.addChild(b);
+	//mainTG.addChild(co);
+	
+	
+	// Create the rotate behavior node
+	MouseRotate behavior = new MouseRotate();
+	behavior.setTransformGroup(mainTG);
+	objRoot.addChild(behavior);
+	behavior.setSchedulingBounds(bounds);
+	
+	// Create the zoom behavior node
+	MouseZoom behavior2 = new MouseZoom();
+	behavior2.setTransformGroup(mainTG);
+	objRoot.addChild(behavior2);	
+        behavior2.setSchedulingBounds(bounds);
+	
+	// Create the translate behavior node
+	 MouseTranslate behavior3 = new MouseTranslate();
+	behavior3.setTransformGroup(mainTG);
+	objRoot.addChild(behavior3);
+	behavior3.setSchedulingBounds(bounds);
+	
+	Color3f lightColor = new Color3f (1.0f, 1.0f, 1.0f);
+	Vector3f light1Direction = new Vector3f (0.0f, 0.0f, -1f);
+	
+	DirectionalLight light1  = new DirectionalLight (lightColor, light1Direction);
+	light1.setInfluencingBounds (bounds);
+	objRoot.addChild (light1);
+
+	AmbientLight ambientLightNode = new AmbientLight (lightColor);
+	ambientLightNode.setInfluencingBounds (bounds);
+	objRoot.addChild (ambientLightNode);
+	
+	
+	objRoot.compile();
+	return objRoot;
+    }
+ 
+    // create a "standard" universe using SimpleUniverse 
+    public step5() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	Container cp = getContentPane();
+	cp.setLayout(new BorderLayout());
+	Canvas3D c = new Canvas3D(SimpleUniverse.getPreferredConfiguration() );
+	cp.add("Center", c);
+	BranchGroup scene = createSceneGraph();
+	SimpleUniverse u = new SimpleUniverse(c);
+	u.getViewingPlatform().setNominalViewingTransform();
+	u.addBranchGraph(scene);
+
+    	// *** create a viewing platform
+	TransformGroup cameraTG = u.getViewingPlatform().
+	                            getViewPlatformTransform();
+	// starting postion of the viewing platform
+	Vector3f translate = new Vector3f(); 
+      	Transform3D T3D = new Transform3D();
+	// move along z axis by 10.0f ("move away from the screen") 
+	translate.set( 5f, 0f, 18f); //zooms out.
+        T3D.setTranslation(translate);
+	cameraTG.setTransform(T3D);
+        setTitle("Solar System.");
+        setSize(1000,600);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {        
+
+	step5 step6 = new step5();
+
+    }
+    
+}
