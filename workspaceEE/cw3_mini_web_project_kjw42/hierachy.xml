@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<classes>
+
+	-<Vehicle>
+		<cid>1</cid><pid>0</pid><abstract>1</abstract>
+	</Vehicle>
+	
+	-<Car>
+		<cid>2</cid><pid>1</pid><abstract>0</abstract>
+	</Car>
+
+	-<Plane>
+		<cid>3</cid><pid>1</pid><abstract>0</abstract>
+	</Plane>
+
+	-<Watercraft>
+		<cid>4</cid><pid>1</pid><abstract>0</abstract>
+	</Watercraft>
+
+	-<ship>
+		<cid>5</cid><pid>4</pid><abstract>0</abstract>
+	</ship>
+
+	-<boat>
+		<cid>6</cid><pid>4</pid><abstract>0</abstract>
+	</boat>
+
+	-<powerboat>
+		<cid>7</cid><pid>6</pid><abstract>0</abstract>
+	</powerboat>
+
+	-<rowingboat>
+		<cid>8</cid><pid>6</pid><abstract>0</abstract>
+	</rowingboat>
+
+	-<gondola>
+		<cid>9</cid><pid>8</pid><abstract>0</abstract>
+	</gondola>
+
+	-<sailingvessel>
+		<cid>10</cid><pid>4</pid><abstract>0</abstract>
+	</sailingvessel>
+
+</classes>

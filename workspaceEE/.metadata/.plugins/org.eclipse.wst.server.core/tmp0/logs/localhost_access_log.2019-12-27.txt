@@ -1,0 +1,5 @@
+127.0.0.1 - - [27/Dec/2019:20:52:31 +0000] "GET / HTTP/1.1" 404 1036
+0:0:0:0:0:0:0:1 - - [27/Dec/2019:20:52:32 +0000] "GET /cw3_mini_web_project_kjw42/servlet/extractClassInfo HTTP/1.1" 404 1087
+0:0:0:0:0:0:0:1 - - [27/Dec/2019:20:52:50 +0000] "GET /cw3_mini_web_project_kjw42/servlet/extractClassInfo HTTP/1.1" 404 1087
+0:0:0:0:0:0:0:1 - - [27/Dec/2019:20:52:59 +0000] "GET /cw3_mini_web_project_kjw42/servlet/extractClassInfo HTTP/1.1" 404 1087
+0:0:0:0:0:0:0:1 - - [27/Dec/2019:20:53:26 +0000] "GET /cw3_mini_web_project_kjw42/servlet/extractClassInfo HTTP/1.1" 404 1087

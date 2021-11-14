@@ -1,0 +1,70 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class extractClassInfo {
+	connectToDatabase hero = new connectToDatabase();
+	// A
+	@RequestMapping(value = "/cheditor/api/addclass", method = RequestMethod.GET)
+	public String addclass(@RequestParam(value = "cid",required = true) int cid,
+						@RequestParam(value = "name",required = true) String name,
+						@RequestParam(value = "abstract",required = false) boolean class_is_abstract,
+						@RequestParam(value = "pid",required = false) int pid){
+		try {
+			Connection connect = hero.getConnection();
+		} catch (SQLException e) {
+			
+		}
+				String variable=null;
+				PreparedStatement pstmt;
+				//response in json.
+				if(){
+					return "{"+"\""+"ret"+"\""+":"+"\"true\""+"}";
+				}
+				else{
+					return "{"+"\n"+"\""+"ret"+"\""+":"+"\"false\""+","+"\n"
+				+"\""+"message"+":"+"\""+variable+"\"";
+				}
+				//Sort specifically 
+					return "{"+"\n"+"\""+"cid"+"\""+cid+"\""+","+"\n"
+				+"\""+"name"+"\""+":"+name+","+"\n"
+					+"\""+"abstract"+"\""+":"+"\""+class_is_abstract+"\n"+"}";
+	}
+	
+	// B 
+	@RequestMapping(value = "/cheditor/api/getclass/{cid}", method=RequestMethod.GET)
+	public String getInfo(@PathVariable("cid") int cid){
+		
+		//Json string
+		return "";
+	}
+	
+	// C
+	@RequestMapping(value = "/cheditor/api/getclass/{cid}", method = RequestMethod.GET)
+	public String deleteClass(@PathVariable("cid")int cid){
+		
+		
+		return "";
+	}
+	// D
+	@RequestMapping(value = "/cheditor/api/superclasses/{cid}",method = RequestMethod.GET)
+	public String getSuperClasses(@PathVariable("cid") int cid){
+		
+		return "";
+	}
+	// E
+	@RequestMapping(value = "/cheditor/api/subclasses/{cid}",method = RequestMethod.GET)
+	public String getSubClasses(@PathVariable("cid") int cid){
+		return "";
+	}
+	
+}

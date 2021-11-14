@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Voting Page</title>
+</head>
+<body>
+<form action="./Vote" method="get">
+<input type="radio" name="constituency" value="BlueParty">Blue Party<br>
+<input type="radio" name="constituency" value="RedParty">Red Party<br>
+<input type="radio" name="constituency" value="YellowParty"> Yellow Party<br>
+<input type="radio" name="constituency" value="Independent"> Independent<br>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

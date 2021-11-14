@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+C:\Users\ked\workspaceEE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2881962346.index
+\cw3_mini_web_project_kjw42\src
